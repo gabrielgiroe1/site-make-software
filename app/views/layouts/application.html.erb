@@ -6,16 +6,19 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-
   <body>
-  <%= render 'layouts/navbar' %>
+    <%= render 'layouts/navbar' %>
     <%# <main class="container mx-auto mt-28 px-5 flex"> %>
-      <%= yield %>
+    <%= yield %>
     <%# </main> %>
     <%= render 'layouts/footer' %>
+    <% flash.each do |key, message| %>
+      <div class="bg-green-500 text-white px-4 py-2 mb-4">
+        <%= message %>
+      </div>
+    <% end %>
   </body>
 </html>

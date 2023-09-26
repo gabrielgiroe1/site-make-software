@@ -1,4 +1,38 @@
-<div>
-  <h1 class="font-bold text-4xl">Pages#contact</h1>
-  <p>Find me in app/views/pages/contact.html.erb</p>
-</div>
+<div class="container mx-auto mt-10">
+  <h1 class="text-3xl font-semibold mb-6">Contact Us</h1>
+  <p class="mb-4">If you are interested in working with us please get in touch:</p>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <!-- Contact Form -->
+    <div>
+      <h2 class="text-xl font-semibold mb-4">Send us a message</h2>
+      <%= form_for @message, url: pages_contact_path, method: :post do |f| %>
+        <div class="mb-4">
+          <%= f.label :name, "Your Name", class: "block text-gray-700 font-semibold mb-2" %>
+          <%= f.text_field :name, class: "form-input rounded-md w-full" %>
+        </div>
+        <div class="mb-4">
+          <%= f.label :email, "Your Email", class: "block text-gray-700 font-semibold mb-2" %>
+          <%= f.email_field :email, class: "form-input rounded-md w-full" %>
+        </div>
+        <div class="mb-4">
+          <%= f.label :message, "Your Message", class: "block text-gray-700 font-semibold mb-2" %>
+          <%= f.text_area :message, class: "form-textarea rounded-md w-full h-32" %>
+        </div>
+        <div class="mt-6">
+          <%= f.submit "Send Message", class: "bg-blue-500 text-white px-4 py-2 rounded-md" %>
+        </div>
+      <% end %>
+    </div>
+    <!-- Contact Information -->
+    <div>
+      <h2 class="text-xl font-semibold mb-4">Contact Information</h2>
+      <p class="mb-2"><strong>Email:</strong> gabriel.giroe@gmail.com</p>
+      <%# <p class="mb-2"><strong>Phone:</strong> +1234567890</p> %>
+      <p><strong>Address:</strong> Comuna Maciuca, Judetul Valcea</p>
+    </div>
+  </div>
+  <section class= "map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22668.072341694744!2d24.014374392668405!3d44.750032224555135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4752a4095710123b%3A0x27d68b01b139efb3!2sBoc%C5%9Fa%20247346!5e0!3m2!1sro!2sro!4v1695740441595!5m2!1sro!2sro"
+       width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </section>
